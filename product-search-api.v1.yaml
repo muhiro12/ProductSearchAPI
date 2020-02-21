@@ -108,7 +108,7 @@ paths:
                             results:
                               type: array
                               items:
-                                title: Result
+                                title: ProductSearchResult
                                 type: object
                                 properties:
                                   product:
@@ -154,7 +154,7 @@ paths:
                                   results:
                                     type: array
                                     items:
-                                      title: Result
+                                      title: ProductSearchResult
                                       type: object
                                       properties:
                                         product:
@@ -370,7 +370,7 @@ components:
             results:
               type: array
               items:
-                title: Result
+                title: ProductSearchResult
                 type: object
                 properties:
                   product:
@@ -416,7 +416,7 @@ components:
                   results:
                     type: array
                     items:
-                      title: Result
+                      title: ProductSearchResult
                       type: object
                       properties:
                         product:
@@ -478,7 +478,7 @@ components:
                   results:
                     type: array
                     items:
-                      title: Result
+                      title: ProductSearchResult
                       type: object
                       properties:
                         product:
@@ -524,7 +524,7 @@ components:
                         results:
                           type: array
                           items:
-                            title: Result
+                            title: ProductSearchResult
                             type: object
                             properties:
                               product:
@@ -576,7 +576,7 @@ components:
         results:
           type: array
           items:
-            title: Result
+            title: ProductSearchResult
             type: object
             properties:
               product:
@@ -622,7 +622,7 @@ components:
               results:
                 type: array
                 items:
-                  title: Result
+                  title: ProductSearchResult
                   type: object
                   properties:
                     product:
@@ -665,8 +665,8 @@ components:
                       type: string
                     score:
                       type: number
-    Result:
-      title: Result
+    ProductSearchResult:
+      title: ProductSearchResult
       type: object
       properties:
         product:
@@ -710,7 +710,7 @@ components:
         results:
           type: array
           items:
-            title: Result
+            title: ProductSearchResult
             type: object
             properties:
               product:
