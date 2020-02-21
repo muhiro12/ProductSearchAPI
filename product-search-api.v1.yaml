@@ -1,0 +1,797 @@
+openapi: 3.0.0
+info:
+  title: Cloud Vision API
+  version: '1.0'
+servers:
+  - url: 'https://vision.googleapis.com'
+paths:
+  '/v1/images:annotate':
+    post:
+      summary: ''
+      operationId: 'post-v1-images:annotate'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                requests:
+                  type: array
+                  items:
+                    title: AnnotateImageRequest
+                    type: object
+                    properties:
+                      image:
+                        title: Image
+                        type: object
+                        properties:
+                          content:
+                            type: string
+                          souce:
+                            title: ImageSource
+                            type: object
+                            properties:
+                              gcsImageUri:
+                                type: string
+                              imageUri:
+                                type: string
+                      features:
+                        type: array
+                        items:
+                          title: Feature
+                          type: object
+                          properties:
+                            type:
+                              type: string
+                            maxResults:
+                              type: number
+                            model:
+                              type: string
+                      imageContext:
+                        title: ImageContext
+                        type: object
+                        properties:
+                          latLongRect:
+                            $ref: ''
+                          languageHints:
+                            type: array
+                            items:
+                              type: string
+                          cropHintsParams:
+                            $ref: ''
+                          productSearchParams:
+                            title: ProductSearchParams
+                            type: object
+                            properties:
+                              boundingPoly:
+                                title: BoundingPoly
+                                type: object
+                                properties:
+                                  vertices:
+                                    $ref: ''
+                                  normalizedVertices:
+                                    $ref: ''
+                              productSet:
+                                type: string
+                              productCategories:
+                                type: array
+                                items:
+                                  type: string
+                              filter:
+                                type: string
+                          webDetectionParams:
+                            $ref: ''
+                parent:
+                  type: string
+            examples: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                title: BatchAnnotateImagesResponse
+                type: object
+                properties:
+                  responses:
+                    type: array
+                    items:
+                      title: AnnotateImageResponse
+                      type: object
+                      properties:
+                        productSearchResults:
+                          title: ProductSearchResullts
+                          type: object
+                          properties:
+                            indexTime:
+                              type: string
+                            results:
+                              type: array
+                              items:
+                                title: Result
+                                type: object
+                                properties:
+                                  product:
+                                    title: Product
+                                    type: object
+                                    properties:
+                                      name:
+                                        type: string
+                                      displayName:
+                                        type: string
+                                      description:
+                                        type: string
+                                      productCategory:
+                                        type: string
+                                      productLabels:
+                                        type: array
+                                        items:
+                                          title: KeyValue
+                                          type: object
+                                          properties:
+                                            key:
+                                              type: string
+                                            value:
+                                              type: string
+                                  score:
+                                    type: number
+                                  image:
+                                    type: string
+                            productGroupedResults:
+                              type: array
+                              items:
+                                title: GroupedResult
+                                type: object
+                                properties:
+                                  boundingPoly:
+                                    title: BoundingPoly
+                                    type: object
+                                    properties:
+                                      vertices:
+                                        $ref: ''
+                                      normalizedVertices:
+                                        $ref: ''
+                                  results:
+                                    type: array
+                                    items:
+                                      title: Result
+                                      type: object
+                                      properties:
+                                        product:
+                                          title: Product
+                                          type: object
+                                          properties:
+                                            name:
+                                              type: string
+                                            displayName:
+                                              type: string
+                                            description:
+                                              type: string
+                                            productCategory:
+                                              type: string
+                                            productLabels:
+                                              type: array
+                                              items:
+                                                title: KeyValue
+                                                type: object
+                                                properties:
+                                                  key:
+                                                    type: string
+                                                  value:
+                                                    type: string
+                                        score:
+                                          type: number
+                                        image:
+                                          type: string
+                                  objectAnnotations:
+                                    type: array
+                                    items:
+                                      title: ObjectAnnotation
+                                      type: object
+                                      properties:
+                                        mid:
+                                          type: string
+                                        languageCode:
+                                          type: string
+                                        name:
+                                          type: string
+                                        score:
+                                          type: number
+components:
+  schemas:
+    AnnotateImageRequest:
+      title: AnnotateImageRequest
+      type: object
+      properties:
+        image:
+          title: Image
+          type: object
+          properties:
+            content:
+              type: string
+            souce:
+              title: ImageSource
+              type: object
+              properties:
+                gcsImageUri:
+                  type: string
+                imageUri:
+                  type: string
+        features:
+          type: array
+          items:
+            title: Feature
+            type: object
+            properties:
+              type:
+                type: string
+              maxResults:
+                type: number
+              model:
+                type: string
+        imageContext:
+          title: ImageContext
+          type: object
+          properties:
+            latLongRect:
+              $ref: ''
+            languageHints:
+              type: array
+              items:
+                type: string
+            cropHintsParams:
+              $ref: ''
+            productSearchParams:
+              title: ProductSearchParams
+              type: object
+              properties:
+                boundingPoly:
+                  title: BoundingPoly
+                  type: object
+                  properties:
+                    vertices:
+                      $ref: ''
+                    normalizedVertices:
+                      $ref: ''
+                productSet:
+                  type: string
+                productCategories:
+                  type: array
+                  items:
+                    type: string
+                filter:
+                  type: string
+            webDetectionParams:
+              $ref: ''
+    Image:
+      title: Image
+      type: object
+      properties:
+        content:
+          type: string
+        souce:
+          title: ImageSource
+          type: object
+          properties:
+            gcsImageUri:
+              type: string
+            imageUri:
+              type: string
+    ImageSource:
+      title: ImageSource
+      type: object
+      properties:
+        gcsImageUri:
+          type: string
+        imageUri:
+          type: string
+    Feature:
+      title: Feature
+      type: object
+      properties:
+        type:
+          type: string
+        maxResults:
+          type: number
+        model:
+          type: string
+    ImageContext:
+      title: ImageContext
+      type: object
+      properties:
+        latLongRect:
+          $ref: ''
+        languageHints:
+          type: array
+          items:
+            type: string
+        cropHintsParams:
+          $ref: ''
+        productSearchParams:
+          title: ProductSearchParams
+          type: object
+          properties:
+            boundingPoly:
+              title: BoundingPoly
+              type: object
+              properties:
+                vertices:
+                  $ref: ''
+                normalizedVertices:
+                  $ref: ''
+            productSet:
+              type: string
+            productCategories:
+              type: array
+              items:
+                type: string
+            filter:
+              type: string
+        webDetectionParams:
+          $ref: ''
+    ProductSearchParams:
+      title: ProductSearchParams
+      type: object
+      properties:
+        boundingPoly:
+          title: BoundingPoly
+          type: object
+          properties:
+            vertices:
+              $ref: ''
+            normalizedVertices:
+              $ref: ''
+        productSet:
+          type: string
+        productCategories:
+          type: array
+          items:
+            type: string
+        filter:
+          type: string
+    BoundingPoly:
+      title: BoundingPoly
+      type: object
+      properties:
+        vertices:
+          $ref: ''
+        normalizedVertices:
+          $ref: ''
+    AnnotateImageResponse:
+      title: AnnotateImageResponse
+      type: object
+      properties:
+        productSearchResults:
+          title: ProductSearchResullts
+          type: object
+          properties:
+            indexTime:
+              type: string
+            results:
+              type: array
+              items:
+                title: Result
+                type: object
+                properties:
+                  product:
+                    title: Product
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      displayName:
+                        type: string
+                      description:
+                        type: string
+                      productCategory:
+                        type: string
+                      productLabels:
+                        type: array
+                        items:
+                          title: KeyValue
+                          type: object
+                          properties:
+                            key:
+                              type: string
+                            value:
+                              type: string
+                  score:
+                    type: number
+                  image:
+                    type: string
+            productGroupedResults:
+              type: array
+              items:
+                title: GroupedResult
+                type: object
+                properties:
+                  boundingPoly:
+                    title: BoundingPoly
+                    type: object
+                    properties:
+                      vertices:
+                        $ref: ''
+                      normalizedVertices:
+                        $ref: ''
+                  results:
+                    type: array
+                    items:
+                      title: Result
+                      type: object
+                      properties:
+                        product:
+                          title: Product
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            displayName:
+                              type: string
+                            description:
+                              type: string
+                            productCategory:
+                              type: string
+                            productLabels:
+                              type: array
+                              items:
+                                title: KeyValue
+                                type: object
+                                properties:
+                                  key:
+                                    type: string
+                                  value:
+                                    type: string
+                        score:
+                          type: number
+                        image:
+                          type: string
+                  objectAnnotations:
+                    type: array
+                    items:
+                      title: ObjectAnnotation
+                      type: object
+                      properties:
+                        mid:
+                          type: string
+                        languageCode:
+                          type: string
+                        name:
+                          type: string
+                        score:
+                          type: number
+    BatchAnnotateImagesResponse:
+      title: BatchAnnotateImagesResponse
+      type: object
+      properties:
+        responses:
+          type: array
+          items:
+            title: AnnotateImageResponse
+            type: object
+            properties:
+              productSearchResults:
+                title: ProductSearchResullts
+                type: object
+                properties:
+                  indexTime:
+                    type: string
+                  results:
+                    type: array
+                    items:
+                      title: Result
+                      type: object
+                      properties:
+                        product:
+                          title: Product
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            displayName:
+                              type: string
+                            description:
+                              type: string
+                            productCategory:
+                              type: string
+                            productLabels:
+                              type: array
+                              items:
+                                title: KeyValue
+                                type: object
+                                properties:
+                                  key:
+                                    type: string
+                                  value:
+                                    type: string
+                        score:
+                          type: number
+                        image:
+                          type: string
+                  productGroupedResults:
+                    type: array
+                    items:
+                      title: GroupedResult
+                      type: object
+                      properties:
+                        boundingPoly:
+                          title: BoundingPoly
+                          type: object
+                          properties:
+                            vertices:
+                              $ref: ''
+                            normalizedVertices:
+                              $ref: ''
+                        results:
+                          type: array
+                          items:
+                            title: Result
+                            type: object
+                            properties:
+                              product:
+                                title: Product
+                                type: object
+                                properties:
+                                  name:
+                                    type: string
+                                  displayName:
+                                    type: string
+                                  description:
+                                    type: string
+                                  productCategory:
+                                    type: string
+                                  productLabels:
+                                    type: array
+                                    items:
+                                      title: KeyValue
+                                      type: object
+                                      properties:
+                                        key:
+                                          type: string
+                                        value:
+                                          type: string
+                              score:
+                                type: number
+                              image:
+                                type: string
+                        objectAnnotations:
+                          type: array
+                          items:
+                            title: ObjectAnnotation
+                            type: object
+                            properties:
+                              mid:
+                                type: string
+                              languageCode:
+                                type: string
+                              name:
+                                type: string
+                              score:
+                                type: number
+    ProductSearchResullts:
+      title: ProductSearchResullts
+      type: object
+      properties:
+        indexTime:
+          type: string
+        results:
+          type: array
+          items:
+            title: Result
+            type: object
+            properties:
+              product:
+                title: Product
+                type: object
+                properties:
+                  name:
+                    type: string
+                  displayName:
+                    type: string
+                  description:
+                    type: string
+                  productCategory:
+                    type: string
+                  productLabels:
+                    type: array
+                    items:
+                      title: KeyValue
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                        value:
+                          type: string
+              score:
+                type: number
+              image:
+                type: string
+        productGroupedResults:
+          type: array
+          items:
+            title: GroupedResult
+            type: object
+            properties:
+              boundingPoly:
+                title: BoundingPoly
+                type: object
+                properties:
+                  vertices:
+                    $ref: ''
+                  normalizedVertices:
+                    $ref: ''
+              results:
+                type: array
+                items:
+                  title: Result
+                  type: object
+                  properties:
+                    product:
+                      title: Product
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        displayName:
+                          type: string
+                        description:
+                          type: string
+                        productCategory:
+                          type: string
+                        productLabels:
+                          type: array
+                          items:
+                            title: KeyValue
+                            type: object
+                            properties:
+                              key:
+                                type: string
+                              value:
+                                type: string
+                    score:
+                      type: number
+                    image:
+                      type: string
+              objectAnnotations:
+                type: array
+                items:
+                  title: ObjectAnnotation
+                  type: object
+                  properties:
+                    mid:
+                      type: string
+                    languageCode:
+                      type: string
+                    name:
+                      type: string
+                    score:
+                      type: number
+    Result:
+      title: Result
+      type: object
+      properties:
+        product:
+          title: Product
+          type: object
+          properties:
+            name:
+              type: string
+            displayName:
+              type: string
+            description:
+              type: string
+            productCategory:
+              type: string
+            productLabels:
+              type: array
+              items:
+                title: KeyValue
+                type: object
+                properties:
+                  key:
+                    type: string
+                  value:
+                    type: string
+        score:
+          type: number
+        image:
+          type: string
+    GroupedResult:
+      title: GroupedResult
+      type: object
+      properties:
+        boundingPoly:
+          title: BoundingPoly
+          type: object
+          properties:
+            vertices:
+              $ref: ''
+            normalizedVertices:
+              $ref: ''
+        results:
+          type: array
+          items:
+            title: Result
+            type: object
+            properties:
+              product:
+                title: Product
+                type: object
+                properties:
+                  name:
+                    type: string
+                  displayName:
+                    type: string
+                  description:
+                    type: string
+                  productCategory:
+                    type: string
+                  productLabels:
+                    type: array
+                    items:
+                      title: KeyValue
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                        value:
+                          type: string
+              score:
+                type: number
+              image:
+                type: string
+        objectAnnotations:
+          type: array
+          items:
+            title: ObjectAnnotation
+            type: object
+            properties:
+              mid:
+                type: string
+              languageCode:
+                type: string
+              name:
+                type: string
+              score:
+                type: number
+    Product:
+      title: Product
+      type: object
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        description:
+          type: string
+        productCategory:
+          type: string
+        productLabels:
+          type: array
+          items:
+            title: KeyValue
+            type: object
+            properties:
+              key:
+                type: string
+              value:
+                type: string
+    KeyValue:
+      title: KeyValue
+      type: object
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+    ObjectAnnotation:
+      title: ObjectAnnotation
+      type: object
+      properties:
+        mid:
+          type: string
+        languageCode:
+          type: string
+        name:
+          type: string
+        score:
+          type: number
