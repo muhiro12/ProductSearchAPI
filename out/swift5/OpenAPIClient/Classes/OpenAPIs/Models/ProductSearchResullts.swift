@@ -11,10 +11,10 @@ import Foundation
 public struct ProductSearchResullts: Codable {
 
     public var indexTime: String?
-    public var results: [Result1]?
+    public var results: [ProductSearchResult1]?
     public var productGroupedResults: [GroupedResult1]?
 
-    public init(indexTime: String?, results: [Result1]?, productGroupedResults: [GroupedResult1]?) {
+    public init(indexTime: String?, results: [ProductSearchResult1]?, productGroupedResults: [GroupedResult1]?) {
         self.indexTime = indexTime
         self.results = results
         self.productGroupedResults = productGroupedResults

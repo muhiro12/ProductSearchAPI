@@ -59,8 +59,8 @@ Class | Method | HTTP request | Description
  - [ProductSearchParams1](docs/ProductSearchParams1.md)
  - [ProductSearchResullts](docs/ProductSearchResullts.md)
  - [ProductSearchResullts1](docs/ProductSearchResullts1.md)
- - [Result](docs/Result.md)
- - [Result1](docs/Result1.md)
+ - [ProductSearchResult](docs/ProductSearchResult.md)
+ - [ProductSearchResult1](docs/ProductSearchResult1.md)
 
 
 ## Documentation For Authorization

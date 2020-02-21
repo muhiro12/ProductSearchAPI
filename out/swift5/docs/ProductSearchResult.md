@@ -1,4 +1,4 @@
-# Result1
+# ProductSearchResult
 
 ## Properties
 Name | Type | Description | Notes
