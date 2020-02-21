@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**boundingPoly** | [**BoundingPoly1**](BoundingPoly1.md) |  | [optional] 
 **results** | [ProductSearchResult1] |  | [optional] 
 **objectAnnotations** | [ObjectAnnotation1] |  | [optional] 
 

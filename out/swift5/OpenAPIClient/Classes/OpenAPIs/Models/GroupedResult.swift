@@ -10,12 +10,10 @@ import Foundation
 
 public struct GroupedResult: Codable {
 
-    public var boundingPoly: BoundingPoly1?
     public var results: [ProductSearchResult1]?
     public var objectAnnotations: [ObjectAnnotation1]?
 
-    public init(boundingPoly: BoundingPoly1?, results: [ProductSearchResult1]?, objectAnnotations: [ObjectAnnotation1]?) {
-        self.boundingPoly = boundingPoly
+    public init(results: [ProductSearchResult1]?, objectAnnotations: [ObjectAnnotation1]?) {
         self.results = results
         self.objectAnnotations = objectAnnotations
     }

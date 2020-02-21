@@ -10,18 +10,12 @@ import Foundation
 
 public struct ImageContext1: Codable {
 
-    public var latLongRect: Any?
     public var languageHints: [String]?
-    public var cropHintsParams: Any?
     public var productSearchParams: ProductSearchParams1?
-    public var webDetectionParams: Any?
 
-    public init(latLongRect: Any?, languageHints: [String]?, cropHintsParams: Any?, productSearchParams: ProductSearchParams1?, webDetectionParams: Any?) {
-        self.latLongRect = latLongRect
+    public init(languageHints: [String]?, productSearchParams: ProductSearchParams1?) {
         self.languageHints = languageHints
-        self.cropHintsParams = cropHintsParams
         self.productSearchParams = productSearchParams
-        self.webDetectionParams = webDetectionParams
     }
 
 }

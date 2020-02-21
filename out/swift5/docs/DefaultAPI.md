@@ -19,7 +19,7 @@ Method | HTTP request | Description
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OpenAPIClient
 
-let inlineObject = inline_object(requests: [AnnotateImageRequest_1(image: Image_1(content: "content_example", souce: ImageSource_1(gcsImageUri: "gcsImageUri_example", imageUri: "imageUri_example")), features: [Feature_1(type: "type_example", maxResults: 123, model: "model_example")], imageContext: ImageContext_1(latLongRect: 123, languageHints: ["languageHints_example"], cropHintsParams: 123, productSearchParams: ProductSearchParams_1(boundingPoly: BoundingPoly_1(vertices: 123, normalizedVertices: 123), productSet: "productSet_example", productCategories: ["productCategories_example"], filter: "filter_example"), webDetectionParams: 123))], parent: "parent_example") // InlineObject |  (optional)
+let inlineObject = inline_object(requests: [AnnotateImageRequest_1(image: Image_1(content: "content_example", souce: ImageSource_1(gcsImageUri: "gcsImageUri_example", imageUri: "imageUri_example")), features: [Feature_1(type: "type_example", maxResults: 123, model: "model_example")], imageContext: ImageContext_1(languageHints: ["languageHints_example"], productSearchParams: ProductSearchParams_1(productSet: "productSet_example", productCategories: ["productCategories_example"], filter: "filter_example")))], parent: "parent_example") // InlineObject |  (optional)
 
 DefaultAPI.postV1ImagesAnnotate(inlineObject: inlineObject) { (response, error) in
     guard error == nil else {

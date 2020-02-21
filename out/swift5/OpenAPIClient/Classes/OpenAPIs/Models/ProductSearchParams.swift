@@ -10,13 +10,11 @@ import Foundation
 
 public struct ProductSearchParams: Codable {
 
-    public var boundingPoly: BoundingPoly1?
     public var productSet: String?
     public var productCategories: [String]?
     public var filter: String?
 
-    public init(boundingPoly: BoundingPoly1?, productSet: String?, productCategories: [String]?, filter: String?) {
-        self.boundingPoly = boundingPoly
+    public init(productSet: String?, productCategories: [String]?, filter: String?) {
         self.productSet = productSet
         self.productCategories = productCategories
         self.filter = filter

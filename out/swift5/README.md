@@ -36,8 +36,6 @@ Class | Method | HTTP request | Description
  - [AnnotateImageResponse1](docs/AnnotateImageResponse1.md)
  - [BatchAnnotateImagesResponse](docs/BatchAnnotateImagesResponse.md)
  - [BatchAnnotateImagesResponse1](docs/BatchAnnotateImagesResponse1.md)
- - [BoundingPoly](docs/BoundingPoly.md)
- - [BoundingPoly1](docs/BoundingPoly1.md)
  - [Feature](docs/Feature.md)
  - [Feature1](docs/Feature1.md)
  - [GroupedResult](docs/GroupedResult.md)
