@@ -51,26 +51,14 @@ paths:
                         title: ImageContext
                         type: object
                         properties:
-                          latLongRect:
-                            $ref: ''
                           languageHints:
                             type: array
                             items:
                               type: string
-                          cropHintsParams:
-                            $ref: ''
                           productSearchParams:
                             title: ProductSearchParams
                             type: object
                             properties:
-                              boundingPoly:
-                                title: BoundingPoly
-                                type: object
-                                properties:
-                                  vertices:
-                                    $ref: ''
-                                  normalizedVertices:
-                                    $ref: ''
                               productSet:
                                 type: string
                               productCategories:
@@ -79,8 +67,6 @@ paths:
                                   type: string
                               filter:
                                 type: string
-                          webDetectionParams:
-                            $ref: ''
                 parent:
                   type: string
             examples: {}
@@ -143,14 +129,6 @@ paths:
                                 title: GroupedResult
                                 type: object
                                 properties:
-                                  boundingPoly:
-                                    title: BoundingPoly
-                                    type: object
-                                    properties:
-                                      vertices:
-                                        $ref: ''
-                                      normalizedVertices:
-                                        $ref: ''
                                   results:
                                     type: array
                                     items:
@@ -233,26 +211,14 @@ components:
           title: ImageContext
           type: object
           properties:
-            latLongRect:
-              $ref: ''
             languageHints:
               type: array
               items:
                 type: string
-            cropHintsParams:
-              $ref: ''
             productSearchParams:
               title: ProductSearchParams
               type: object
               properties:
-                boundingPoly:
-                  title: BoundingPoly
-                  type: object
-                  properties:
-                    vertices:
-                      $ref: ''
-                    normalizedVertices:
-                      $ref: ''
                 productSet:
                   type: string
                 productCategories:
@@ -261,8 +227,6 @@ components:
                     type: string
                 filter:
                   type: string
-            webDetectionParams:
-              $ref: ''
     Image:
       title: Image
       type: object
@@ -299,26 +263,14 @@ components:
       title: ImageContext
       type: object
       properties:
-        latLongRect:
-          $ref: ''
         languageHints:
           type: array
           items:
             type: string
-        cropHintsParams:
-          $ref: ''
         productSearchParams:
           title: ProductSearchParams
           type: object
           properties:
-            boundingPoly:
-              title: BoundingPoly
-              type: object
-              properties:
-                vertices:
-                  $ref: ''
-                normalizedVertices:
-                  $ref: ''
             productSet:
               type: string
             productCategories:
@@ -327,20 +279,10 @@ components:
                 type: string
             filter:
               type: string
-        webDetectionParams:
-          $ref: ''
     ProductSearchParams:
       title: ProductSearchParams
       type: object
       properties:
-        boundingPoly:
-          title: BoundingPoly
-          type: object
-          properties:
-            vertices:
-              $ref: ''
-            normalizedVertices:
-              $ref: ''
         productSet:
           type: string
         productCategories:
@@ -349,14 +291,6 @@ components:
             type: string
         filter:
           type: string
-    BoundingPoly:
-      title: BoundingPoly
-      type: object
-      properties:
-        vertices:
-          $ref: ''
-        normalizedVertices:
-          $ref: ''
     AnnotateImageResponse:
       title: AnnotateImageResponse
       type: object
@@ -405,14 +339,6 @@ components:
                 title: GroupedResult
                 type: object
                 properties:
-                  boundingPoly:
-                    title: BoundingPoly
-                    type: object
-                    properties:
-                      vertices:
-                        $ref: ''
-                      normalizedVertices:
-                        $ref: ''
                   results:
                     type: array
                     items:
@@ -513,14 +439,6 @@ components:
                       title: GroupedResult
                       type: object
                       properties:
-                        boundingPoly:
-                          title: BoundingPoly
-                          type: object
-                          properties:
-                            vertices:
-                              $ref: ''
-                            normalizedVertices:
-                              $ref: ''
                         results:
                           type: array
                           items:
@@ -611,14 +529,6 @@ components:
             title: GroupedResult
             type: object
             properties:
-              boundingPoly:
-                title: BoundingPoly
-                type: object
-                properties:
-                  vertices:
-                    $ref: ''
-                  normalizedVertices:
-                    $ref: ''
               results:
                 type: array
                 items:
@@ -699,14 +609,6 @@ components:
       title: GroupedResult
       type: object
       properties:
-        boundingPoly:
-          title: BoundingPoly
-          type: object
-          properties:
-            vertices:
-              $ref: ''
-            normalizedVertices:
-              $ref: ''
         results:
           type: array
           items:
