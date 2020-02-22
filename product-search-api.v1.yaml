@@ -175,6 +175,9 @@ paths:
                                           type: string
                                         score:
                                           type: number
+      parameters: []
+      security:
+        - APIKey: []
 components:
   schemas:
     AnnotateImageRequest:
@@ -697,3 +700,8 @@ components:
           type: string
         score:
           type: number
+  securitySchemes:
+    APIKey:
+      name: key
+      type: apiKey
+      in: query
