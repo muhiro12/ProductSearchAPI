@@ -69,6 +69,8 @@ paths:
                                 type: string
                 parent:
                   type: string
+              required:
+                - requests
             examples: {}
       responses:
         '200':
@@ -175,9 +177,12 @@ paths:
                                           type: string
                                         score:
                                           type: number
-      parameters: []
-      security:
-        - APIKey: []
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: key
+          required: true
 components:
   schemas:
     AnnotateImageRequest:
@@ -700,8 +705,4 @@ components:
           type: string
         score:
           type: number
-  securitySchemes:
-    APIKey:
-      name: key
-      type: apiKey
-      in: query
+  securitySchemes: {}
