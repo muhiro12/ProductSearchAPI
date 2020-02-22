@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 # **postV1ImagesAnnotate**
 ```swift
-    open class func postV1ImagesAnnotate(inlineObject: InlineObject? = nil, completion: @escaping (_ data: BatchAnnotateImagesResponse1?, _ error: Error?) -> Void)
+    open class func postV1ImagesAnnotate(key: String, inlineObject: InlineObject? = nil, completion: @escaping (_ data: BatchAnnotateImagesResponse1?, _ error: Error?) -> Void)
 ```
 
 
@@ -19,9 +19,10 @@ Method | HTTP request | Description
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import OpenAPIClient
 
+let key = "key_example" // String | 
 let inlineObject = inline_object(requests: [AnnotateImageRequest_1(image: Image_1(content: "content_example", souce: ImageSource_1(gcsImageUri: "gcsImageUri_example", imageUri: "imageUri_example")), features: [Feature_1(type: "type_example", maxResults: 123, model: "model_example")], imageContext: ImageContext_1(languageHints: ["languageHints_example"], productSearchParams: ProductSearchParams_1(productSet: "productSet_example", productCategories: ["productCategories_example"], filter: "filter_example")))], parent: "parent_example") // InlineObject |  (optional)
 
-DefaultAPI.postV1ImagesAnnotate(inlineObject: inlineObject) { (response, error) in
+DefaultAPI.postV1ImagesAnnotate(key: key, inlineObject: inlineObject) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -37,6 +38,7 @@ DefaultAPI.postV1ImagesAnnotate(inlineObject: inlineObject) { (response, error) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **key** | **String** |  | 
  **inlineObject** | [**InlineObject**](InlineObject.md) |  | [optional] 
 
 ### Return type
@@ -45,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[APIKey](../README.md#APIKey)
+No authorization required
 
 ### HTTP request headers
 

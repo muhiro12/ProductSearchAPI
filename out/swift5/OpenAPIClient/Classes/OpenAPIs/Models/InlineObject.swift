@@ -10,10 +10,10 @@ import Foundation
 
 public struct InlineObject: Codable {
 
-    public var requests: [AnnotateImageRequest1]?
+    public var requests: [AnnotateImageRequest1]
     public var parent: String?
 
-    public init(requests: [AnnotateImageRequest1]?, parent: String?) {
+    public init(requests: [AnnotateImageRequest1], parent: String?) {
         self.requests = requests
         self.parent = parent
     }
