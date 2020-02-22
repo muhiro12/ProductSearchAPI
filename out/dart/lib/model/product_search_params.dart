@@ -2,8 +2,6 @@ part of openapi.api;
 
 class ProductSearchParams {
   
-  BoundingPoly1 boundingPoly = null;
-  
   String productSet = null;
   
   List<String> productCategories = [];
@@ -13,14 +11,11 @@ class ProductSearchParams {
 
   @override
   String toString() {
-    return 'ProductSearchParams[boundingPoly=$boundingPoly, productSet=$productSet, productCategories=$productCategories, filter=$filter, ]';
+    return 'ProductSearchParams[productSet=$productSet, productCategories=$productCategories, filter=$filter, ]';
   }
 
   ProductSearchParams.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    boundingPoly = (json['boundingPoly'] == null) ?
-      null :
-      BoundingPoly1.fromJson(json['boundingPoly']);
     productSet = json['productSet'];
     productCategories = (json['productCategories'] == null) ?
       null :
@@ -30,8 +25,6 @@ class ProductSearchParams {
 
   Map<String, dynamic> toJson() {
     Map <String, dynamic> json = {};
-    if (boundingPoly != null)
-      json['boundingPoly'] = boundingPoly;
     if (productSet != null)
       json['productSet'] = productSet;
     if (productCategories != null)

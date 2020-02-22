@@ -39,6 +39,10 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```dart
 import 'package:openapi/api.dart';
 
+// TODO Configure API key authorization: APIKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('APIKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('APIKey').apiKeyPrefix = 'Bearer';
 
 var api_instance = DefaultApi();
 var inlineObject = InlineObject(); // InlineObject | 
@@ -69,8 +73,6 @@ Class | Method | HTTP request | Description
  - [AnnotateImageResponse1](doc//AnnotateImageResponse1.md)
  - [BatchAnnotateImagesResponse](doc//BatchAnnotateImagesResponse.md)
  - [BatchAnnotateImagesResponse1](doc//BatchAnnotateImagesResponse1.md)
- - [BoundingPoly](doc//BoundingPoly.md)
- - [BoundingPoly1](doc//BoundingPoly1.md)
  - [Feature](doc//Feature.md)
  - [Feature1](doc//Feature1.md)
  - [GroupedResult](doc//GroupedResult.md)
@@ -92,13 +94,18 @@ Class | Method | HTTP request | Description
  - [ProductSearchParams1](doc//ProductSearchParams1.md)
  - [ProductSearchResullts](doc//ProductSearchResullts.md)
  - [ProductSearchResullts1](doc//ProductSearchResullts1.md)
- - [Result](doc//Result.md)
- - [Result1](doc//Result1.md)
+ - [ProductSearchResult](doc//ProductSearchResult.md)
+ - [ProductSearchResult1](doc//ProductSearchResult1.md)
 
 
 ## Documentation For Authorization
 
- All endpoints do not require authorization.
+
+## APIKey
+
+- **Type**: API key
+- **API key parameter name**: key
+- **Location**: URL query string
 
 
 ## Author

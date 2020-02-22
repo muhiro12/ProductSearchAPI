@@ -11,7 +11,7 @@ void main() {
       // TODO
     });
 
-    // List<Result1> results (default value: [])
+    // List<ProductSearchResult1> results (default value: [])
     test('to test the property `results`', () async {
       // TODO
     });

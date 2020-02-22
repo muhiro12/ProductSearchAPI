@@ -1,11 +1,11 @@
 import 'package:openapi/api.dart';
 import 'package:test/test.dart';
 
-// tests for Result
+// tests for ProductSearchResult1
 void main() {
-    var instance = new Result();
+    var instance = new ProductSearchResult1();
 
-  group('test Result', () {
+  group('test ProductSearchResult1', () {
     // Product1 product (default value: null)
     test('to test the property `product`', () async {
       // TODO

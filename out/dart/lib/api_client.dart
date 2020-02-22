@@ -20,6 +20,7 @@ class ApiClient {
 
   ApiClient({this.basePath = "https://vision.googleapis.com"}) {
     // Setup authentications (key: authentication name, value: authentication).
+    _authentications['APIKey'] = ApiKeyAuth("query", "key");
   }
 
   void addDefaultHeader(String key, String value) {
@@ -49,10 +50,6 @@ class ApiClient {
           return BatchAnnotateImagesResponse.fromJson(value);
         case 'BatchAnnotateImagesResponse1':
           return BatchAnnotateImagesResponse1.fromJson(value);
-        case 'BoundingPoly':
-          return BoundingPoly.fromJson(value);
-        case 'BoundingPoly1':
-          return BoundingPoly1.fromJson(value);
         case 'Feature':
           return Feature.fromJson(value);
         case 'Feature1':
@@ -95,10 +92,10 @@ class ApiClient {
           return ProductSearchResullts.fromJson(value);
         case 'ProductSearchResullts1':
           return ProductSearchResullts1.fromJson(value);
-        case 'Result':
-          return Result.fromJson(value);
-        case 'Result1':
-          return Result1.fromJson(value);
+        case 'ProductSearchResult':
+          return ProductSearchResult.fromJson(value);
+        case 'ProductSearchResult1':
+          return ProductSearchResult1.fromJson(value);
         default:
           {
             Match match;

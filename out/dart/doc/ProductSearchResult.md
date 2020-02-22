@@ -1,4 +1,4 @@
-# openapi.model.Result1
+# openapi.model.ProductSearchResult
 
 ## Load the model package
 ```dart

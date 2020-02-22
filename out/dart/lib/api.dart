@@ -20,8 +20,6 @@ part 'model/annotate_image_response.dart';
 part 'model/annotate_image_response1.dart';
 part 'model/batch_annotate_images_response.dart';
 part 'model/batch_annotate_images_response1.dart';
-part 'model/bounding_poly.dart';
-part 'model/bounding_poly1.dart';
 part 'model/feature.dart';
 part 'model/feature1.dart';
 part 'model/grouped_result.dart';
@@ -43,8 +41,8 @@ part 'model/product_search_params.dart';
 part 'model/product_search_params1.dart';
 part 'model/product_search_resullts.dart';
 part 'model/product_search_resullts1.dart';
-part 'model/result.dart';
-part 'model/result1.dart';
+part 'model/product_search_result.dart';
+part 'model/product_search_result1.dart';
 
 
 ApiClient defaultApiClient = ApiClient();

@@ -8,7 +8,6 @@ import 'package:openapi/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**boundingPoly** | [**BoundingPoly1**](BoundingPoly1.md) |  | [optional] [default to null]
 **productSet** | **String** |  | [optional] [default to null]
 **productCategories** | **List&lt;String&gt;** |  | [optional] [default to []]
 **filter** | **String** |  | [optional] [default to null]

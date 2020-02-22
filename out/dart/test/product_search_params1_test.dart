@@ -6,11 +6,6 @@ void main() {
     var instance = new ProductSearchParams1();
 
   group('test ProductSearchParams1', () {
-    // BoundingPoly1 boundingPoly (default value: null)
-    test('to test the property `boundingPoly`', () async {
-      // TODO
-    });
-
     // String productSet (default value: null)
     test('to test the property `productSet`', () async {
       // TODO

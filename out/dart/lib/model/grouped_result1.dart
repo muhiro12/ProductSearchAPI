@@ -2,26 +2,21 @@ part of openapi.api;
 
 class GroupedResult1 {
   
-  BoundingPoly1 boundingPoly = null;
-  
-  List<Result1> results = [];
+  List<ProductSearchResult1> results = [];
   
   List<ObjectAnnotation1> objectAnnotations = [];
   GroupedResult1();
 
   @override
   String toString() {
-    return 'GroupedResult1[boundingPoly=$boundingPoly, results=$results, objectAnnotations=$objectAnnotations, ]';
+    return 'GroupedResult1[results=$results, objectAnnotations=$objectAnnotations, ]';
   }
 
   GroupedResult1.fromJson(Map<String, dynamic> json) {
     if (json == null) return;
-    boundingPoly = (json['boundingPoly'] == null) ?
-      null :
-      BoundingPoly1.fromJson(json['boundingPoly']);
     results = (json['results'] == null) ?
       null :
-      Result1.listFromJson(json['results']);
+      ProductSearchResult1.listFromJson(json['results']);
     objectAnnotations = (json['objectAnnotations'] == null) ?
       null :
       ObjectAnnotation1.listFromJson(json['objectAnnotations']);
@@ -29,8 +24,6 @@ class GroupedResult1 {
 
   Map<String, dynamic> toJson() {
     Map <String, dynamic> json = {};
-    if (boundingPoly != null)
-      json['boundingPoly'] = boundingPoly;
     if (results != null)
       json['results'] = results;
     if (objectAnnotations != null)

@@ -4,7 +4,7 @@ class ProductSearchResullts {
   
   String indexTime = null;
   
-  List<Result1> results = [];
+  List<ProductSearchResult1> results = [];
   
   List<GroupedResult1> productGroupedResults = [];
   ProductSearchResullts();
@@ -19,7 +19,7 @@ class ProductSearchResullts {
     indexTime = json['indexTime'];
     results = (json['results'] == null) ?
       null :
-      Result1.listFromJson(json['results']);
+      ProductSearchResult1.listFromJson(json['results']);
     productGroupedResults = (json['productGroupedResults'] == null) ?
       null :
       GroupedResult1.listFromJson(json['productGroupedResults']);

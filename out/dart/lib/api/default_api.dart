@@ -26,7 +26,7 @@ class DefaultApi {
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
-    List<String> authNames = [];
+    List<String> authNames = ["APIKey"];
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;

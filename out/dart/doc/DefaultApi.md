@@ -20,6 +20,10 @@ Method | HTTP request | Description
 ### Example 
 ```dart
 import 'package:openapi/api.dart';
+// TODO Configure API key authorization: APIKey
+//defaultApiClient.getAuthentication<ApiKeyAuth>('APIKey').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('APIKey').apiKeyPrefix = 'Bearer';
 
 var api_instance = DefaultApi();
 var inlineObject = InlineObject(); // InlineObject | 
@@ -44,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[APIKey](../README.md#APIKey)
 
 ### HTTP request headers
 
