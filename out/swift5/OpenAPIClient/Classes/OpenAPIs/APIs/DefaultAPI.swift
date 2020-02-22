@@ -29,6 +29,9 @@ open class DefaultAPI {
 
     /**
      - POST /v1/images:annotate
+     - API Key:
+       - type: apiKey key (QUERY)
+       - name: APIKey
      - parameter inlineObject: (body)  (optional)
      - returns: RequestBuilder<BatchAnnotateImagesResponse1> 
      */

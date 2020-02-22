@@ -63,7 +63,12 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
- All endpoints do not require authorization.
+
+## APIKey
+
+- **Type**: API key
+- **API key parameter name**: key
+- **Location**: URL query string
 
 
 ## Author
