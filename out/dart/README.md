@@ -39,16 +39,13 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```dart
 import 'package:openapi/api.dart';
 
-// TODO Configure API key authorization: APIKey
-//defaultApiClient.getAuthentication<ApiKeyAuth>('APIKey').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('APIKey').apiKeyPrefix = 'Bearer';
 
 var api_instance = DefaultApi();
+var key = key_example; // String | 
 var inlineObject = InlineObject(); // InlineObject | 
 
 try {
-    var result = api_instance.postV1ImagesAnnotate(inlineObject);
+    var result = api_instance.postV1ImagesAnnotate(key, inlineObject);
     print(result);
 } catch (e) {
     print("Exception when calling DefaultApi->postV1ImagesAnnotate: $e\n");
@@ -100,12 +97,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
-
-## APIKey
-
-- **Type**: API key
-- **API key parameter name**: key
-- **Location**: URL query string
+ All endpoints do not require authorization.
 
 
 ## Author

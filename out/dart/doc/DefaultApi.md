@@ -13,23 +13,20 @@ Method | HTTP request | Description
 
 
 # **postV1ImagesAnnotate**
-> BatchAnnotateImagesResponse1 postV1ImagesAnnotate(inlineObject)
+> BatchAnnotateImagesResponse1 postV1ImagesAnnotate(key, inlineObject)
 
 
 
 ### Example 
 ```dart
 import 'package:openapi/api.dart';
-// TODO Configure API key authorization: APIKey
-//defaultApiClient.getAuthentication<ApiKeyAuth>('APIKey').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('APIKey').apiKeyPrefix = 'Bearer';
 
 var api_instance = DefaultApi();
+var key = key_example; // String | 
 var inlineObject = InlineObject(); // InlineObject | 
 
 try { 
-    var result = api_instance.postV1ImagesAnnotate(inlineObject);
+    var result = api_instance.postV1ImagesAnnotate(key, inlineObject);
     print(result);
 } catch (e) {
     print("Exception when calling DefaultApi->postV1ImagesAnnotate: $e\n");
@@ -40,6 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **key** | **String**|  | [default to null]
  **inlineObject** | [**InlineObject**](InlineObject.md)|  | [optional] 
 
 ### Return type
@@ -48,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[APIKey](../README.md#APIKey)
+No authorization required
 
 ### HTTP request headers
 

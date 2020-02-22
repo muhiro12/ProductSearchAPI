@@ -20,7 +20,6 @@ class ApiClient {
 
   ApiClient({this.basePath = "https://vision.googleapis.com"}) {
     // Setup authentications (key: authentication name, value: authentication).
-    _authentications['APIKey'] = ApiKeyAuth("query", "key");
   }
 
   void addDefaultHeader(String key, String value) {
